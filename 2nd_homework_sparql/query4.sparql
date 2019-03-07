@@ -1,0 +1,22 @@
+#return all club names and all player names
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX f: <http://example.org/football_league/>
+PREFIX i: <http://example.org/football_league/terms#>
+
+SELECT ?type ?name
+WHERE
+{
+	{
+	?f rdf:type i:Player ;
+	   i:name ?name.
+	BIND ("PLAYER" as ?type).
+	}
+	UNION
+	{
+	?f rdf:type i:Club ;
+	   i:name ?name.
+	BIND ("CLUB" as ?type).
+	}
+}
+ORDER by ?type ?name

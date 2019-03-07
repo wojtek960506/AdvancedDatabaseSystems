@@ -1,0 +1,15 @@
+#return club names which stadions have capacity less than 80000
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX f: <http://example.org/football_league/>
+PREFIX i: <http://example.org/football_league/terms#>
+SELECT ?name 
+WHERE
+  {
+     ?f rdf:type i:Club ;
+	i:name ?name ;
+	i:stadium ?b .
+        ?b i:capacity ?c
+     FILTER ( ?c < 80000 )
+   }
+	

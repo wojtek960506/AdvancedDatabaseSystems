@@ -1,0 +1,18 @@
+#return names, clubs and positions of all players
+#not every player have an information about his position
+#order results descending by player name
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX f: <http://example.org/football_league/>
+PREFIX i: <http://example.org/football_league/terms#>
+SELECT ?name ?club ?position
+WHERE
+   {
+     ?f rdf:type i:Player ;
+	i:name ?name ;
+	i:club ?c .
+     ?c i:name ?club .
+     OPTIONAL { ?f i:position ?position . }
+	
+   }
+ORDER BY DESC(?name)

@@ -1,0 +1,19 @@
+#return player with the most number of goals (show this number)
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX f: <http://example.org/football_league/>
+PREFIX i: <http://example.org/football_league/terms#>
+
+SELECT ?player_name (COUNT(?player) as ?number_of_goals)
+WHERE
+{
+	?f rdf:type i:Match ;
+	   i:goal ?goal.
+	?goal i:player ?player ;
+	      i:type ?type.
+	?player i:name ?player_name
+	FILTER (?type != "O")
+}
+GROUP BY ?player ?player_name
+ORDER BY DESC(?number_of_goals) LIMIT 1
+

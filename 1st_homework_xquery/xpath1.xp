@@ -1,0 +1,3 @@
+(: <!--players which club have stadium with capacity more than 80000--> :)
+
+//player[ club/text() = //club[stadium>80000]/@name ]/legal_name/text()	

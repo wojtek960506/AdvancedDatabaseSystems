@@ -1,0 +1,32 @@
+#return matches with more than one card
+#show date, guest team and host team 
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX f: <http://example.org/football_league/>
+PREFIX i: <http://example.org/football_league/terms#>
+SELECT ?date ?host ?guest 
+WHERE
+  {
+     ?f rdf:type i:Match ;
+	i:scores ?sc ;
+	i:date ?date .
+     ?sc i:host ?h ;
+	 i:guest ?g .
+     ?h i:club ?hc.
+     ?g i:club ?gc.
+     ?hc i:name ?host.
+     ?gc i:name ?guest.
+
+     MINUS {
+	SELECT ?f (COUNT(?card) as ?c)
+	WHERE
+	{
+	  ?f rdf:type i:Match ;
+	     i:card ?card.
+	}
+	GROUP BY ?f ?c
+	HAVING (?c <= 1)
+     }
+
+  }
+

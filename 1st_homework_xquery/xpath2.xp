@@ -1,0 +1,4 @@
+(: minute in which own goal (type="O") was scored in first match :)
+(: minute is a text value of goal :)
+
+//match[1]/goals/goal[@type eq "O"]/text()

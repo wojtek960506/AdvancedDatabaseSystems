@@ -1,0 +1,183 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix f: <http://example.org/football_league/> .
+@prefix i: <http://example.org/football_league/terms#> .
+
+
+f:player1
+	rdf:type i:Player ;
+	i:name "Cristiano Ronaldo" ;
+	i:club f:club1 ;
+	i:number 7 ;
+	i:height 1.87 ;
+	i:weight 84 ;
+	i:birth [ i:city "Funchal" ; i:country "Portugal" ; i:date "1985-02-05" ] ;
+	i:nationality "Portuguese" .
+
+
+f:player2
+	rdf:type i:Player ;
+	i:name "Lionel Messi" ;
+	i:club f:club3 ;
+	i:number 10 ;
+	i:position "forward" ;
+	i:height 1.69 ;
+	i:weight 72 ;
+	i:birth [ i:city "Rosario" ; i:country "Argentina" ; i:date "1987-06-24" ] ;
+	i:nationality "Argentine" .
+	
+f:player3
+	rdf:type i:Player ;
+	i:name "Robert Lewandowski" ;
+	i:club f:club4 ;
+	i:number 9 ;
+	i:position "forward" ;
+	i:height 1.85 ;
+	i:weight 79 ;
+	i:birth [ i:city "Warsaw" ; i:country "Poland" ; i:date "1988-08-21" ] ;
+	i:nationality "Polish" .
+
+f:player4
+	rdf:type i:Player ;
+	i:name "Wojciech Szczesny" ;
+	i:club f:club1 ;
+	i:number 1 ;
+	i:position "goalkeeper" ;
+	i:height 1.96 ;
+	i:weight 90 ;
+	i:birth [ i:city "Warsaw" ; i:country "Poland" ; i:date "1990-04-18" ] ;
+	i:nationality "Polish" .
+
+f:player5
+	rdf:type i:Player ;
+	i:name "Sergio Ramos" ;
+	i:club f:club2 ;
+	i:number 4 ;
+	i:position "defender" ;
+	i:height 1.84 ;
+	i:weight 82 ;
+	i:birth [ i:city "Camas" ; i:country "Spain" ; i:date "1986-03-30" ] ;
+	i:nationality "Spanish" .
+
+f:player6
+	rdf:type i:Player ;
+	i:name "Marco Asensio" ;
+	i:club f:club2 ;
+	i:number 20 ;
+	i:position "midfielder" ;
+	i:height 1.82 ;
+	i:weight 76 ;
+	i:birth [ i:city "Palma de Mallorca" ; i:country "Spain" ; i:date "1996-01-21" ] ;
+	i:nationality "Spanish" .
+
+
+f:club1
+	rdf:type i:Club ;
+	i:name "Juventus F.C." ;
+	i:founded "1897-11-01" ;
+	i:stadium [ i:name "Allianz Stadium" ; i:capacity 41507 ] ;
+	i:coach [ i:name "Massimilliano Allegri" ; i:nationality "Italian" ] .
+
+f:club2
+	rdf:type i:Club ;
+	i:name "Real Madrid C.F." ;
+	i:founded "1902-03-06" ;
+	i:stadium [ i:name "Santiago Bernabeu" ; i:capacity 81044 ] ;
+	i:coach [ i:name "Santiago Scolari" ; i:nationality "Argentine" ] .
+
+f:club3
+	rdf:type i:Club ;
+	i:name "F.C. Barcelona" ;
+	i:founded "1899-11-29" ;
+	i:stadium [ i:name "Camp Nou" ; i:capacity 99354 ] ;
+	i:coach [ i:name "Ernesto Valverde" ; i:nationality "Spanish" ] .
+
+f:club4
+	rdf:type i:Club ;
+	i:name "FC Bayern Munich" ;
+	i:founded "1900-02-27" ;
+	i:stadium [ i:name "Allianz Arena" ; i:capacity 75000 ] ;
+	i:coach [ i:name "Niko Kovac" ; i:nationality "Croatian" ] .
+
+f:match1
+	rdf:type i:Match ;
+	i:date "2018-10-28" ;
+	i:time "16:15" ;
+	i:stadium "Camp Nou" ;
+	i:scores [
+			i:host [ i:club f:club3 ; i:result 1 ] ;
+			i:guest [ i:club f:club2 ; i:result 2 ] 
+		 ] ;
+
+	i:goal	[ i:club f:club3 ; i:player f:player2 ; i:type "G" ; i:minute 15 ] ,
+		[ i:club f:club2 ; i:player f:player5 ; i:type "P" ; i:minute 49 ] ,
+		[ i:club f:club2 ; i:player f:player6 ; i:type "O" ; i:minute 83 ] ;
+
+	i:card  [ i:player f:player5 ; i:type "R" ; i:minute 60 ],
+		[ i:player f:player2 ; i:type "Y" ; i:minute 85 ] .
+	  
+		   
+f:match2
+	rdf:type i:Match ;
+	i:date "2018-11-03" ;
+	i:time "21:00" ;
+	i:stadium "Allianz Stadium" ;
+	i:scores [
+			i:host [ i:club f:club1 ; i:result 3 ] ;
+			i:guest [ i:club f:club4 ; i:result 1 ] 
+		 ] ;
+ 		
+	i:goal  [ i:club f:club1 ; i:player f:player1 ; i:type "G" ; i:minute 14 ] ,
+		[ i:club f:club1 ; i:player f:player1 ; i:type "P" ; i:minute 39 ] ,
+		[ i:club f:club4 ; i:player f:player3 ; i:type "P" ; i:minute 55 ] ,
+		[ i:club f:club1 ; i:player f:player1 ; i:type "G" ; i:minute 66 ] ;
+
+	i:card  [ i:player f:player3 ; i:type "Y" ; i:minute 56 ] ,
+		[ i:player f:player3 ; i:type "R" ; i:minute 77 ] .  
+
+f:match3
+	rdf:type i:Match ;
+	i:date "2018-12-15" ;
+	i:time "17:30" ;
+	i:stadium "Santiago Bernabeu" ;
+	i:scores [
+			i:host [ i:club f:club2 ; i:result 1 ] ;
+			i:guest [ i:club f:club1 ; i:result 1 ] 
+		 ] ;
+ 		
+	i:goal  [ i:club f:club1 ; i:player f:player1 ; i:type "P" ; i:minute 20 ] ,
+		[ i:club f:club1 ; i:player f:player4 ; i:type "O" ; i:minute 40 ] ;
+
+	i:card [ i:player f:player4 ; i:type "Y" ; i:minute 42 ] . 
+
+f:match4
+	rdf:type i:Match ;
+	i:date "2018-12-17" ;
+	i:time "18:45" ;
+	i:stadium "Allianz Arena" ;
+	i:scores [
+			i:host [ i:club f:club4 ; i:result 0 ] ;
+			i:guest [ i:club f:club3 ; i:result 1 ] 
+		 ] ;
+ 		
+	i:goal  [ i:club f:club3 ; i:player f:player2 ; i:type "G" ; i:minute 90 ] ;
+
+	i:card  [ i:player f:player3 ; i:type "R" ; i:minute 50 ] . 
+
+f:match5
+	rdf:type i:Match ;
+	i:date "2018-12-20" ;
+	i:time "20:40" ;
+	i:stadium "Santiago Bernabeu" ;
+	i:scores [
+			i:host [ i:club f:club2 ; i:result 2 ] ;
+			i:guest [ i:club f:club4 ; i:result 4 ] 
+		 ] ;
+ 		
+	i:goal	[ i:club f:club4 ; i:player f:player3 ; i:type "G" ; i:minute 10 ] ,
+		[ i:club f:club4 ; i:player f:player3 ; i:type "G" ; i:minute 20 ] ,
+		[ i:club f:club2 ; i:player f:player5 ; i:type "G" ; i:minute 30 ] ,
+		[ i:club f:club2 ; i:player f:player6 ; i:type "P" ; i:minute 40 ] ,
+		[ i:club f:club4 ; i:player f:player3 ; i:type "P" ; i:minute 50 ] ,
+		[ i:club f:club4 ; i:player f:player3 ; i:type "G" ; i:minute 60 ] ;
+
+	i:card	[ i:player f:player5 ; i:type "R" ; i:minute 50 ] .

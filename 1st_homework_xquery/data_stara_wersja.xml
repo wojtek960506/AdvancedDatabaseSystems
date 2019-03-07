@@ -1,0 +1,208 @@
+<!--
+Create an XML document with sample data from the domain of your individual topic
+Work with mutually interlinked entities of at least 3 different types (e.g. lines, flights and tickets)
+Insert data about at least 15 particular entities (e.g. 3 lines, 4 flights, 8 tickets)
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<football_league>
+
+	<players>
+	
+		<player number="7" nationality="Portuguese">
+			<legal_name>Cristiano Ronaldo</legal_name>
+			<club>Juventus F.C.</club>
+			<position>forward</position>
+			<height unit="m">1.87</height>
+			<weight unit="kg">84</weight>
+			<birth city="Funchal" country="Portugal">1985-02-05</birth>
+			
+		</player>
+		
+		<player number="10" nationality="Argentine">
+			<legal_name>Lionel Messi</legal_name>
+			<club>F.C. Barcelona</club>
+			<position>forward</position>
+			<height unit="m">1.69</height>
+			<weight unit="kg">72</weight>
+			<birth city="rosario" country="Argentina">1987-06-24</birth>
+		</player>
+	
+		<player number = "9" nationality="Polish">
+			<legal_name>Robert Lewandowski</legal_name>
+			<club>FC Bayern Munich</club>
+			<position></position>
+			<height unit="m">1.85</height>
+			<weight unit="kg">79</weight>
+			<birth city="Warsaw" country="Poland">1988-08-21</birth>
+		</player>
+			
+		<player number="1" nationality="Polish">
+			<legal_name>Wojciech Szczesny</legal_name>
+			<club>Juventus F.C.</club>
+			<position>goalkeeper</position>
+			<height unit="m">1.96</height>
+			<weight unit="kg">90</weight>
+			<birth city="Warsaw" country="Poland">1990-04-18</birth>
+		</player>
+			
+		<player number="4" nationality="Spanish">
+			<legal_name>Sergio Ramos</legal_name>
+			<club>Real Madrid C.F.</club>
+			<position>defender</position>
+			<height unit="m">1.84</height>
+			<weight unit="kg">82</weight>
+			<birth city="Camas" country="Spain">1986-03-30</birth>
+		</player>
+		
+		<player number="20" nationality="Spanish">
+			<legal_name>Marco Asensio</legal_name>
+			<club>Real Madrid C.F.</club>
+			<position>midfielder</position>
+			<height unit="m">1.82</height>
+			<weight unit="kg">76</weight>
+			<birth city="Palma de Mallorca" country="Spain">1996-01-21</birth>
+		</player>
+	
+	</players>
+	
+	
+	<clubs>
+	
+		<club name="Juventus F.C.">
+			<founded>1897-11-01</founded>
+			<stadium capacity=41507>Allianz Stadium</stadium>
+			<coach nationality="Italian">Massimilliano Allegri</coach>
+		</club>
+	
+		<club name="Real Madrid C.F.">
+			<founded>1902-03-06</founded>
+			<stadium capacity=81044>Santiago Bernabeu</stadium>
+			<coach nationality="Spanish">Julen Lopetegui</coach>
+		</club>
+		
+		<club name="F.C. Barcelona">
+			<founded>1899-11-29</founded>
+			<stadium capacity=99354>Camp Nou</stadium>
+			<coach nationality="Spanish">Ernesto Valverde</coach>
+		</club>
+	
+		<club name="FC Bayern Munich">
+			<founded>1900-02-27</founded>
+			<stadium capacity=75000>Allianz Arena</capacity>
+			<coach nationality="Croatian">Niko Kovac</coach>
+		</club>
+	
+	</clubs>
+	
+	
+	<matches>
+	
+		<match>
+			<clubs>
+				<club goals=1>F.C. Barcelona</club>
+				<club goals=2>Real Madrid C.F.</club>
+			</clubs>
+			<fixture>
+				<date>2018-10-28</date>
+				<time>16:15</time>
+			</fixture>
+			<stadium>Camp Nou</stadium>
+			<goals>
+				<goal club="F.C. Barcelona" player="Lionel Messi" type="G">15</goal>
+				<goal club="Real Madrid C.F." player="Sergio Ramos" type="P">49</goal>
+				<goal club="Real Madrid C.F." player="Lionel Messi" type="O">83</goal>
+			</goals>
+			<cards>
+				<card player="Sergio Ramos" type="red">60</card>
+				<card player="Lionel Messi" type="yellow">85</card>
+			</cards>
+		</match>
+		
+		<match>
+			<clubs>
+				<club goals=3>Juventus F.C.</club>
+				<club goals=1>FC Bayern Munich</club>
+			</clubs>
+			<fixture>
+				<date>2018-11-03</date>
+				<time>21:00</time>
+			</fixture>
+			<stadium>Allianz Stadium</stadium>
+			<goals>
+				<goal club="Juventus F.C." player="Cristiano Ronaldo" type="G">14</goal>
+				<goal club="Juventus F.C." player="Cristiano Ronaldo" type="P">39</goal>
+				<goal club="FC Bayern Munich" player="Robert Lewandowski" type="P">55</goal>
+				<goal club="Juventus F.C." player="Cristiano Ronaldo" type="G">66</goal>
+			</goals>
+			<cards>
+				<card player="Robert Lewandowski" type="Y">56</card>
+				<card player="Robert Lewandowski" type="R">77</card>
+			</cards>
+		</match>
+		
+		<match>
+			<clubs>
+				<club goals=1>Real Madrid C.F.</club>
+				<club goals=1>Juventus F.C.</club>
+			</clubs>
+			<fixture>
+				<date>2018-12-15</date>
+				<time>17:30</time>
+			</fixture>
+			<stadium>Santiago Bernabeu</stadium>
+			<goals>
+				<goal club="Juventus F.C." player="Cristiano Ronaldo" type="P">20</goal>
+				<goal club="Juventus F.C." player="Wojciech Szczesny" type="O">40</goal>
+			</goals>
+			<cards>
+				<card player="Wojciech Szczesny" type="Y">42</card>
+			</cards>
+		</match>
+		
+		<match>
+			<clubs>
+				<club goals=0>FC Bayern Munich</club>
+				<club goals=1>F.C. Barcelona</club>
+			</clubs>
+			<fixture>
+				<date>2018-12-17</date>
+				<time>18:45</time>
+			</fixture>
+			<stadium>Allianz Arena</stadium>
+			<goals>
+				<goal club="F.C. Barcelona" player="Lionel Messi" type="G">90</goal>
+			</goals>
+			<cards>
+				<card player="Robert Lewandowski" type="R">50</card>
+			</cards>
+		</match>
+		
+		<match>
+			<clubs>
+				<club goals=2>Real Madrid C.F.</club>
+				<club goals=4>FC Bayern Munich</club>
+			</clubs>
+			<fixture>
+				<date>2018-12-20</date>
+				<time>20:40</time>
+			</fixture>
+			<stadium>Santiago Bernabeu</stadium>
+			<goals>
+				<goal club="FC Bayern Munich" player="Robert Lewnadowski" type="G">10</goal>
+				<goal club="FC Bayern Munich" player="Robert Lewnadowski" type="G">20</goal>
+				<goal club="Real Madrid C.F." player="Sergio Ramos" type="G">30</goal>
+				<goal club="Real Madrid C.F." player="Sergio Ramos" type="P">40</goal>
+				<goal club="FC Bayern Munich" player="Robert Lewnadowski" type="P">50</goal>
+				<goal club="FC Bayern Munich" player="Robert Lewnadowski" type="G">60</goal>
+			</goals>
+			<cards>
+				<card player="Sergio Ramos" type="R">50</card>
+			</cards>
+		</match>
+	
+	</matches>
+	
+	
+</football_league>
